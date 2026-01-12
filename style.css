@@ -1,0 +1,51 @@
+body {
+    background: linear-gradient(135deg, #fce4ec, #f3e5f5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.container {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.name { color: #e91e63; }
+
+.countdown {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.countdown div {
+    background: #e91e63;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 80px;
+}
+
+.hidden { display: none; }
+
+.wish {
+    font-size: 3rem;
+    color: #9c27b0;
+    animation: bounce 1s infinite;
+}
+
+.cake { font-size: 5rem; margin-top: 20px; }
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
