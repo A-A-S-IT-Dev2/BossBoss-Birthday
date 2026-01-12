@@ -1,51 +1,75 @@
 body {
     background: linear-gradient(135deg, #fce4ec, #f3e5f5);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    overflow: hidden;
+    padding: 20px; /* مساحة أمان للهواتف */
+    box-sizing: border-box;
     text-align: center;
 }
 
 .container {
     background: white;
-    padding: 3rem;
+    padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px; /* لضمان عدم تمدد الحاوية بشكل مبالغ فيه على الكمبيوتر */
 }
 
-.name { color: #e91e63; }
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
 
+.name { color: #e91e63; display: block; font-size: 2.5rem; margin-top: 10px; }
+
+/* العداد المطور للهاتف */
 .countdown {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
-    font-size: 1.5rem;
-    margin-top: 20px;
+    flex-wrap: wrap; /* لكي تنزل العناصر للأسفل إذا ضاق المكان */
 }
 
 .countdown div {
     background: #e91e63;
     color: white;
-    padding: 15px;
-    border-radius: 10px;
-    min-width: 80px;
+    padding: 15px 10px;
+    border-radius: 12px;
+    flex: 1; /* جعل المربعات متساوية الحجم */
+    min-width: 70px;
+    font-size: 0.9rem;
+}
+
+.countdown span {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
 .hidden { display: none; }
 
 .wish {
-    font-size: 3rem;
+    font-size: 2rem;
     color: #9c27b0;
+    line-height: 1.4;
     animation: bounce 1s infinite;
 }
 
 .cake { font-size: 5rem; margin-top: 20px; }
 
+/* تحسينات خاصة للهواتف الصغيرة جداً */
+@media (max-width: 380px) {
+    h1 { font-size: 1.4rem; }
+    .countdown div { min-width: 60px; padding: 10px 5px; }
+    .wish { font-size: 1.6rem; }
+}
+
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-15px); }
 }
